@@ -36,6 +36,7 @@ fi
 pwd_rule1="^.{8,}$"
 pwd_rule2="[[:upper:]]{1,}"
 pwd_rule3="[0-9]{1,}"
+pwd_rule4="^([a-zA-Z0-9]*)[@!#%<>()/?&*]{1}([a-zA-Z0-9]*)$";
 read -p "Enter the password" password
 if [[ $password =~ $pwd_rule1 ]];
 then
@@ -43,11 +44,11 @@ then
         then
                 if [[ $password =~ $pwd_rule3 ]];
                 then
-                        if [[ ! $st =~ ^[[:alnum:]]+$ ]];
+                        if [[ $password =~ $pwd_rule4 ]];
                         then
                                 echo "Password is valid";
                         else
-                                echo "Password should contain atleast one special character";
+                                echo "Password should contain exactly one special character";
                         fi
                 else
                         echo "Password should contain atleast one numeric number";
