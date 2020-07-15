@@ -25,3 +25,11 @@ then
 else
         echo "The email is invalid";
 fi
+mobilepat="^[0-9]{1,}[ ][0-9]{10}$"
+read -p "Enter mobile number" mobile
+if [[ $mobile =~ $mobilepat ]];
+then
+        echo "Valid mobile number";
+else
+        echo "Invalid mobile number";
+fi
