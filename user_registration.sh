@@ -33,3 +33,11 @@ then
 else
         echo "Invalid mobile number";
 fi
+pwd_rule1="^.{8,}$"
+read -p "Enter the password" password
+if [[ $password =~ $pwd_rule1 ]];
+then
+        echo "Password is valid";
+else
+        echo "Password should contain a minimum of 8 characters";
+fi
