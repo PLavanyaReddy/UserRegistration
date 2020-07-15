@@ -7,5 +7,5 @@ then
         echo "Firstname is valid";
 else
         echo "Firstname is invalid";
-	echo "Firstname should start with a capital name and has minimum three  letters"
+	echo "Firstname should start with a capital letter and has minimum three  letters"
 fi
