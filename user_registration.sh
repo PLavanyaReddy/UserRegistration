@@ -43,7 +43,12 @@ then
         then
                 if [[ $password =~ $pwd_rule3 ]];
                 then
-                        echo "Password is valid";
+                        if [[ ! $st =~ ^[[:alnum:]]+$ ]];
+                        then
+                                echo "Password is valid";
+                        else
+                                echo "Password should contain atleast one special character";
+                        fi
                 else
                         echo "Password should contain atleast one numeric number";
                 fi
