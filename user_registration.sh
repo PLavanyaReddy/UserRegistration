@@ -34,10 +34,16 @@ else
         echo "Invalid mobile number";
 fi
 pwd_rule1="^.{8,}$"
+pwd_rule2="[[:upper:]]{1,}"
 read -p "Enter the password" password
 if [[ $password =~ $pwd_rule1 ]];
 then
-        echo "Password is valid";
+        if [[ $password =~ $pwd_rule2 ]];
+        then
+                echo "Password is valid";
+        else
+                echo "Password should contain atleast one uppercase letter";
+        fi
 else
         echo "Password should contain a minimum of 8 characters";
 fi
