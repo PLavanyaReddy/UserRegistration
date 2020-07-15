@@ -35,12 +35,18 @@ else
 fi
 pwd_rule1="^.{8,}$"
 pwd_rule2="[[:upper:]]{1,}"
+pwd_rule3="[0-9]{1,}"
 read -p "Enter the password" password
 if [[ $password =~ $pwd_rule1 ]];
 then
         if [[ $password =~ $pwd_rule2 ]];
         then
-                echo "Password is valid";
+                if [[ $password =~ $pwd_rule3 ]];
+                then
+                        echo "Password is valid";
+                else
+                        echo "Password should contain atleast one numeric number";
+                fi
         else
                 echo "Password should contain atleast one uppercase letter";
         fi
